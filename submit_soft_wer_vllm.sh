@@ -1,16 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=soft-wer-vllm-sample
-#SBATCH --output=/home/ec2-user/logs/soft-wer-vllm-sample-%A.txt
-#SBATCH --partition=gpu-ondemand
-#SBATCH --gres=gpu:1
-#SBATCH --constraint="g6e.xlarge"
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=24G
-#SBATCH --time=02:00:00
-
 set -euo pipefail
-
-export TRANSFORMERS_OFFLINE=1
 
 MODEL="${MODEL:-Qwen/Qwen3-4B}"
 INPUT="${INPUT:-sample_wer_log.json}"
